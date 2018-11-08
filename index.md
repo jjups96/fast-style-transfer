@@ -1,3 +1,4 @@
 Hello World
 
-![tequida](/examples/misResultados/tequida_muse.jpg){:class="img-responsive"}
+
+![tequida](/examples/misResultados/tequida_muse.jpg | width=100)
