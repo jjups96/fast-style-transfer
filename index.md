@@ -1,2 +1,3 @@
 Hello World
-![tequida](/examples/misREsultados/tequida_muse.jpg){:class="img-responsive"}
+
+![tequida](/examples/misResultados/tequida_muse.jpg){:class="img-responsive"}
