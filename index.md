@@ -17,7 +17,7 @@ Aplicamos varios estilos de pinturas a la rectoria de la unison.
 <div align='center'>
 <img src = 'examples/content/rectoria2.jpg' height="200px">
 </div>
-     
+
 <div align = 'center'>
 <a href = 'examples/style/wave.jpg'><img src = 'examples/thumbs/wave.jpg' height = '200px'></a>
 <img src = 'examples/misResultados/rectoria2_wave.jpg' height = '200px'>
@@ -47,4 +47,3 @@ Aplicamos varios estilos de pinturas a la rectoria de la unison.
 --Content loss
 
 --Style loss
-
