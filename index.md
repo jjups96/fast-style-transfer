@@ -1,11 +1,8 @@
-<div align='center'>
-<h4>||Sitio en construccion||</h4>
-</div>
 <div style="text-align: justify">
 La transferencia de estilo es la técnica de recomponer imágenes al estilo de otras imágenes. Estos se crearon en su mayoría utilizando el código de <a href="https://github.com/jcjohnson/neural-style">Justin Johnson</a> basado en el documento de <a href="https://arxiv.org/abs/1508.06576">Gatys, Ecker y Bethge</a> que demuestra un método para rediseñar imágenes utilizando redes neuronales convolucionales.
 </div>
 <div align='center'>
-<img src = 'https://raw.githubusercontent.com/jjups96/fast-style-transfer/master/examples/thumbs/johnson.png' width="800" height="600">
+<img src = 'https://raw.githubusercontent.com/jjups96/fast-style-transfer/master/examples/thumbs/johnson.png' width="600" height="400">
 </div>
 
 <br>
@@ -25,9 +22,10 @@ En resumen, tomaremos la imagen de entrada base, una imagen de contenido que que
 </div>
 
 <br>
-## Estilizacion de una imagen
+<h2>Estilizacion de una imagen</h2>
 <div style="text-align: justify">
 Aplicamos varios estilos de pinturas a la rectoria de la unison. Hacer click en los thumbnails para ver original.
+
 <div align='center'>
 <img src = 'examples/content/rectoria2.jpg' height="200px">
 </div>
@@ -57,7 +55,7 @@ Para obtener el contenido y las representaciones de estilo de nuestra imagen, ve
 </div>
 
 <div align='center'>
-<img src = 'examples/thumbs/representation.jpg' width="800" height="600" >
+<img src = 'examples/thumbs/representation.jpg' width="600" height="400" >
 </div>
 <br>
 
@@ -148,6 +146,8 @@ En resumen se hace una combinacion de los dos procesos anteriromente mencionados
 </div>
 
 <h2> Agradecimientos y credito </h2>
+<div style="text-align: justify">
 A la Universidad de Sonora y ACARUS por permitirnos usar las supercomputadora Ocotillo
 Imagenes con explicaciones son de Mark Chang y fueron hechas para MLDM Monday NeuralArt
 Codigo base de Logan Engstrom estudiante del MIT
+</div>
