@@ -103,5 +103,39 @@ Realizamos la propagación hacia atrás de la manera habitual, de modo que minim
 <div align='center'>
 <img src = 'examples/thumbs/contenent3.jpg' width="400" height="400">
 </div>
+
+<h2> Generacion de estilo </h2>
+
+<div style="text-align: justify">
+La pérdida de estilo de cómputo es un poco más complicada, pero sigue el mismo principio, esta vez alimenta a nuestra red la imagen de entrada base y la imagen de estilo. Sin embargo, en lugar de comparar las salidas intermedias sin procesar de la imagen de entrada base y la imagen de estilo, comparamos las matrices de Gram de las dos salidas.
+</div>
+
+<div align='center'>
+<img src = 'examples/thumbs/style1.jpg' width="400" height="400">
+</div>
+
+<div style="text-align: justify">
+Matemáticamente, describimos la pérdida de estilo de la imagen de entrada base, <b>x</b>, y la imagen de estilo, <b>a</b>, como la distancia entre la representación de estilo (las matrices Gram) de estas imágenes. Describimos la representación de estilo de una imagen como la correlación entre las diferentes respuestas de filtro dadas por la matriz de Gram Gˡ, donde Gˡᵢⱼ es el producto interno entre el mapa de características vectorizadas i y j en la capa l. Podemos ver que Gˡᵢⱼ generado en el mapa de características para una imagen dada representa la correlación entre los mapas de características i y j.
+</div>
+
+<div align='center'>
+<img src = 'examples/thumbs/style2.jpg' width="400" height="400">
+</div>
+
+<div style="text-align: justify">
+Para generar un estilo para nuestra imagen de entrada base, realizamos un descenso de gradiente desde la imagen de contenido para transformarla en una imagen que coincida con la representación de estilo de la imagen original. Lo hacemos minimizando la distancia al cuadrado media entre el mapa de correlación de características de la imagen de estilo y la imagen de entrada.
+</div>
+
+<div align='center'>
+<img src = 'examples/thumbs/style3.jpg' width="400" height="400">
+</div>
+
+<div style="text-align: justify">
+Por lo tanto, la pérdida total de estilo a través de cada capa, donde Xˡᵢⱼ y Aˡᵢⱼ son la representación de estilo respectiva en la capa l de la imagen de entrada <b>x</b> y la imagen de estilo <b>a</b> , es,
+</div>
+<div align='center'>
+<img src = 'examples/thumbs/style4.jpg' width="400" height="400">
+</div>
+
 <h2> Agradecimientos y credito </h2>
 Imagenes con explicaciones son de Mark Chang y fueron hechas para MLDM Monday NeuralArt
