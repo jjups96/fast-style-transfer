@@ -5,7 +5,7 @@
 La transferencia de estilo es la técnica de recomponer imágenes al estilo de otras imágenes. Estos se crearon en su mayoría utilizando el código de <a href="https://github.com/jcjohnson/neural-style">Justin Johnson</a> basado en el documento de <a href="https://arxiv.org/abs/1508.06576">Gatys, Ecker y Bethge</a> que demuestra un método para rediseñar imágenes utilizando redes neuronales convolucionales.
 </div>
 <div align='center'>
-<img src = 'https://raw.githubusercontent.com/jjups96/fast-style-transfer/master/examples/thumbs/johnson.png'>
+<img src = 'https://raw.githubusercontent.com/jjups96/fast-style-transfer/master/examples/thumbs/johnson.png' width="800" height="600">
 </div>
 
 <br>
@@ -51,13 +51,13 @@ Aplicamos varios estilos de pinturas a la rectoria de la unison. Hacer click en 
 </div>
 
 <br>
-# Definamos estilo y representaciones.
+<h2> Definamos estilo y representaciones.</h2>
 <div style="text-align: justify">
 Para obtener el contenido y las representaciones de estilo de nuestra imagen, veremos algunas capas intermedias dentro de nuestro modelo. Las capas intermedias representan mapas de características que se vuelven cada vez más ordenados a medida que profundiza. En este caso, estamos utilizando la arquitectura de red VGG19, una red de clasificación de imágenes pre-entrenada. Estas capas intermedias son necesarias para definir la representación de contenido y estilo de nuestras imágenes. Para una imagen de entrada, trataremos de hacer coincidir las representaciones de destino de estilo y contenido correspondientes en estas capas intermedias.
 </div>
 
 <div align='center'>
-<img src = 'examples/thumbs/representation.jpg'>
+<img src = 'examples/thumbs/representation.jpg' width="800" height="600" >
 </div>
 <br>
 
@@ -75,3 +75,33 @@ Quizás se esté preguntando por qué estos resultados intermedios dentro de nue
 </div>
 
 <br>
+
+<h2> Modelo </h2>
+<div style="text-align: justify">
+Usaremos el ya bastante conocido VGG19. Esto nos permitirá extraer los mapas de características (y posteriormente el contenido y las representaciones de estilo) del contenido, el estilo y las imágenes generadas. Como es un ejercicio didactico, solo usamos la estructura en lugar del API, por lo que acceder a las capas intermedias no sera posible con este codigo.
+</div>
+<div align='center'>
+<img src = 'examples/thumbs/vgg19.jpg' width="400" height="400">
+</div>
+
+<h2> Generacion de contenido </h2>
+<div style="text-align: justify">
+Nuestra definición de pérdida de contenido es bastante simple. Pasaremos la red tanto la imagen de contenido deseada como nuestra imagen de entrada base. Esto devolverá los resultados de la capa intermedia (de las capas definidas anteriormente) de nuestro modelo. Luego simplemente tomamos la distancia euclidiana entre las dos representaciones intermedias de esas imágenes.
+</div>
+<div align='center'>
+<img src = 'examples/thumbs/contenent1.jpg' width="400" height="400">
+</div>
+<div style="text-align: justify">
+Más formalmente, la pérdida de contenido es una función que describe la distancia del contenido desde nuestra imagen de entrada x y nuestra imagen de contenido, p. Sea Cₙₙ una red neuronal convolucional profunda pre-entrenada. De nuevo, en este caso usamos VGG19. Sea X cualquier imagen, luego Cₙₙ (x) es la red alimentada por X. Deje que Xˡᵢⱼ (x) ∈ Cₙₙ (x) y Pˡᵢⱼ (x) ∈ Cₙₙ (x) describan la representación de las características intermedias respectivas de la red con entradas x y p en la capa l. Luego describimos la distancia (pérdida) de contenido formalmente como:
+</div>
+<div align='center'>
+<img src = 'examples/thumbs/contenent2.jpg' width="400" height="400">
+</div>
+<div style="text-align: justify">
+Realizamos la propagación hacia atrás de la manera habitual, de modo que minimizamos esta pérdida de contenido. Por lo tanto, cambiamos la imagen inicial hasta que genera una respuesta similar en una capa determinada como la imagen de contenido original.
+</div>
+<div align='center'>
+<img src = 'examples/thumbs/contenent3.jpg' width="400" height="400">
+</div>
+<h2> Agradecimientos y credito </h2>
+Imagenes con explicaciones son de Mark Chang y fueron hechas para MLDM Monday NeuralArt
