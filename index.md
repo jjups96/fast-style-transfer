@@ -137,5 +137,17 @@ Por lo tanto, la pérdida total de estilo a través de cada capa, donde Xˡᵢ�
 <img src = 'examples/thumbs/style4.jpg' width="400" height="400">
 </div>
 
+<h2> Generacion de arte </h2>
+
+<div style="text-align: justify">
+En resumen se hace una combinacion de los dos procesos anteriromente mencionados y nos aseguramos que los filtros produzcan un canvas <b>x</b>, con el contenido de la imagen original <b>p</b> y al mismo tiempo tenga el estilo de una imagen <b>a</b>
+</div>
+
+<div align='center'>
+<img src = 'examples/thumbs/art1.jpg' width="400" height="400">
+</div>
+
 <h2> Agradecimientos y credito </h2>
+A la Universidad de Sonora y ACARUS por permitirnos usar las supercomputadora Ocotillo
 Imagenes con explicaciones son de Mark Chang y fueron hechas para MLDM Monday NeuralArt
+Codigo base de Logan Engstrom estudiante del MIT
