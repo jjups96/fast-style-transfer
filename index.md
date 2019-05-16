@@ -151,3 +151,38 @@ A la Universidad de Sonora y ACARUS por permitirnos usar las supercomputadora Oc
 Imagenes con explicaciones son de Mark Chang y fueron hechas para MLDM Monday NeuralArt
 Codigo base de Logan Engstrom estudiante del MIT
 </div>
+
+<h2> Analisi topologico de datos </h2>
+<div style="text-align: justify">
+La topología computacional, llamado TDA por sus siglas en ingles, es una rama interdisciplinaria, relativamente nueva ,que combina elementos de la topología algebraica, computación y, recientemente probabilidad y estadística. Esta disciplina estudia, mediante el uso de algoritmos,las propiedades topológicas en espacios discretos. Lo cual implica que busca explicar la estructuras geométricas subyacentes en los datos.
+</div>
+
+<div style="text-align: justify">
+Si hablamos en terminos de inteligencia aritficial, TDA pertenece a una categoría de herramientas matemáticas que <b>tienen como objetivo determinar asociaciones o patrones matemáticos </b> en datos de sistemas complejos; <b> específicamente con referencia a la forma de dichos datos</b>, sin pretender comprender sus mecanismos internos.
+</div>
+
+<h3> ¿Topología? ¿"Forma"? </h3>
+<div style="text-align: justify">
+Aunque puede ser difícil tratar de comprender un nuevo campo de matematica, por esta ocasion solo bastara conocer las ideas basicas sobre los recursos humanos que usaremos, para así entender el por qué se usa.
+</div>
+
+<h3>Homología persistente</h3>
+<div style="text-align: justify">
+La joya de la corona del TDA es la homología persistente, el método consiste en representar los datos como un complejo simplicial(nodos que representan los datos y aristas que representan la relación entre los datos), para después calcular su "filtración",es decir, los número de Betti(cantidad de hoyos en distintas dimensiones) con diferentes valores de una métrica, en general de distancia entre los nodos, que va de menos a más ; lo cual por construcción revela una representación verdadera de características del espacio subyacente de los datos.
+</div>
+[Imagen de simplejo y su filtracion]
+<h3>Codigo de barras</h3>
+<div style="text-align: justify">
+Si bien la homología persistente, es matemáticamente compleja y representa información que a los ojos inexpertos parece ser de otra dimensión, literalmente lo es. Su representación como estructura de datos es bastante sencilla. Al calcular una filtración, de manera simplificada, estamos realizando una clusterización en diferentes niveles dimensionales al mismo tiempo donde, más que los grupos que se forman o su tamaño, lo que no interesa conocer es su persistencia, es decir, cuánto “tiempo” existen, cuando nacen, cuando mueren, en relación a la métrica. 
+</div>
+[Imagen del codigo de barras de la imagen de arriba]
+<h3>Interpretación.</h3>
+<div style="text-align: justify">
+Al inicio interpretar los datos puede resultar difícil, aunque intuitivo para un topólogo, nosotros solo necesitamos saber que muchas muertes rápidas, que resultan en un solo individuo, implican datos distribuidos uniformemente en el espacio por lo que no tienen relación, por el contrario grupos que persisten en el tiempo implican agrupaciones, y un super individuo desde el inicio implican mucha correlación.
+</div>
+[Imagen de datos con correlacion y sin correlacion.]
+
+<h3>Modificando la función de estilo.</h3>
+<div style="text-align: justify">
+Es por ello que pensamos utilizar un código de barras para analizar la correlación entre las activaciones de dos redes. Pues el metodo actual es bastante sencillo. De momento el código se modificó para aceptar otra función de estilo, y estamos a la espera de  <a href="https://github.com/scikit-tda/ripser.py/issues/67#issuecomment-475905158">la integración de scikit-tda con conda</a> para realizar pruebas.
+</div>
