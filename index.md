@@ -170,17 +170,26 @@ Aunque puede ser difícil tratar de comprender un nuevo campo de matematica, por
 <div style="text-align: justify">
 La joya de la corona del TDA es la homología persistente, el método consiste en representar los datos como un complejo simplicial(nodos que representan los datos y aristas que representan la relación entre los datos), para después calcular su "filtración",es decir, los número de Betti(cantidad de hoyos en distintas dimensiones) con diferentes valores de una métrica, en general de distancia entre los nodos, que va de menos a más ; lo cual por construcción revela una representación verdadera de características del espacio subyacente de los datos.
 </div>
-[Imagen de simplejo y su filtracion]
 <h3>Codigo de barras</h3>
 <div style="text-align: justify">
 Si bien la homología persistente, es matemáticamente compleja y representa información que a los ojos inexpertos parece ser de otra dimensión, literalmente lo es. Su representación como estructura de datos es bastante sencilla. Al calcular una filtración, de manera simplificada, estamos realizando una clusterización en diferentes niveles dimensionales al mismo tiempo donde, más que los grupos que se forman o su tamaño, lo que no interesa conocer es su persistencia, es decir, cuánto “tiempo” existen, cuando nacen, cuando mueren, en relación a la métrica. 
 </div>
-[Imagen del codigo de barras de la imagen de arriba]
+
+<div align='center'>
+<img src = 'examples/content/Homologia.png' width="800" height="375">
+</div>
+
+<a href="https://www.researchgate.net/figure/Computing-the-persistent-homology-of-a-point-cloud-image-adapted-from-27-Fig-1_fig1_327647193">Fuente</a> 
+
+
 <h3>Interpretación.</h3>
 <div style="text-align: justify">
 Al inicio interpretar los datos puede resultar difícil, aunque intuitivo para un topólogo, nosotros solo necesitamos saber que muchas muertes rápidas, que resultan en un solo individuo, implican datos distribuidos uniformemente en el espacio por lo que no tienen relación, por el contrario grupos que persisten en el tiempo implican agrupaciones, y un super individuo desde el inicio implican mucha correlación.
 </div>
-[Imagen de datos con correlacion y sin correlacion.]
+
+![Persistencia](https://github.com/jjups96/fast-style-transfer/tree/master/examples/content/Persistencia.gif)
+
+<a href="https://www.researchgate.net/publication/269876798_Topological_Data_Analysis_of_Biological_Aggregation_Models">Fuente</a>
 
 <h3>Modificando la función de estilo.</h3>
 <div style="text-align: justify">
