@@ -186,7 +186,9 @@ Si bien la homología persistente, es matemáticamente compleja y representa inf
 <div style="text-align: justify">
 Al inicio interpretar los datos puede resultar difícil, aunque intuitivo para un topólogo, nosotros solo necesitamos saber que muchas muertes rápidas, que resultan en un solo individuo, implican datos distribuidos uniformemente en el espacio por lo que no tienen relación, por el contrario grupos que persisten en el tiempo implican agrupaciones, y un super individuo desde el inicio implican mucha correlación.
 </div>
-[Gif que esta pesasdo]
+
+<a href="https://imgur.com/5ouNoWA"><img src="https://i.imgur.com/5ouNoWA.gif" title="source: imgur.com" /></a>
+
 <a href="https://www.researchgate.net/publication/269876798_Topological_Data_Analysis_of_Biological_Aggregation_Models">Fuente</a>
 
 <h3>Modificando la función de estilo.</h3>
