@@ -234,4 +234,4 @@ En la estructura donde guardamos la filtración, nos centraremos en el diccionar
 Al inicio interpretar los datos puede resultar difícil, aunque intuitivo para un topólogo, nosotros solo necesitamos saber que muchas muertes rápidas, que resultan en un solo individuo, implican datos distribuidos uniformemente en el espacio por lo que no tienen relación, por el contrario grupos que persisten en el tiempo implican agrupaciones, y un super individuo desde el inicio implican mucha correlación.
 
 </div>
-##### [GIF Algo pesado para la pagina, pero se puede apreciar la diferencia](https://i.imgur.com/5ouNoWA.gif)
+Gif algo pesdo para la pagina donde se aprecian los cambio dependiendo de la correlacion de los datos [GIF](https://i.imgur.com/5ouNoWA.gif)
