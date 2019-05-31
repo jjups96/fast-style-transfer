@@ -187,7 +187,7 @@ Si bien la homología persistente, es matemáticamente compleja y representa inf
 Al inicio interpretar los datos puede resultar difícil, aunque intuitivo para un topólogo, nosotros solo necesitamos saber que muchas muertes rápidas, que resultan en un solo individuo, implican datos distribuidos uniformemente en el espacio por lo que no tienen relación, por el contrario grupos que persisten en el tiempo implican agrupaciones, y un super individuo desde el inicio implican mucha correlación.
 </div>
 
-<img src="https://imgur.com/a/M8hi1sc" width="600" height="300" />
+<img src="https://imgur.com/5ouNoWA" width="600" height="300" />
 
 <a href="https://www.researchgate.net/publication/269876798_Topological_Data_Analysis_of_Biological_Aggregation_Models">Fuente</a>
 
@@ -202,6 +202,7 @@ De momento nos conformamos con una breve explicación sobre cómo se vería la n
 El archivo a modificar es optimize.py en la carpeta src. Específicamente la sección:
 
 </div>
+
 ```python
 for layer in STYLE_LAYERS:
   features = net[layer].eval(feed_dict={style_image:style_pre})
@@ -209,9 +210,11 @@ for layer in STYLE_LAYERS:
   gram = np.matmul(features.T, features) / features.size
   style_features[layer] = gram
 ```
+
 <div style="text-align: justify">
 Como se mencionó anteriormente, la forma de tradicional de obtener la correlación entre las capas es mediante una matriz de Gram. Pero esperamos obtener mejores resultados aplicando TDA. Primero necesitamos hacer una matriz dispersa pues las matrices de activacion son considerablemente grandes.
 </div>
+
 ```python
 from ripser import ripser
 
@@ -228,6 +231,7 @@ thresh = 1
 D = makeSparseDM(data, thresh)
 filtration = ripser(D, distance_matrix=True)
 ```
+
 <div style="text-align: justify">
   
 En la estructura donde guardamos la filtración, nos centraremos en el diccionario **dgms**, que contiene la información de las muertes y nacimiento de las entidades en distintas dimensiones. De momento no quiero revelar la receta secreta, pero para darse una idea, en la nueva función de estilo tomaremos en cuenta la cantidad de grupos que mueren en un periodo de tiempo, la persistencia de grupo alpha, entre otras cosas. Independientemente de los resultados después podemos agregar informacion sobre los cociclos, para una función más compleja.
