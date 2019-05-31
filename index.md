@@ -192,6 +192,7 @@ De momento nos conformamos con una breve explicación sobre cómo se vería la n
 El archivo a modificar es optimize.py en la carpeta src. Específicamente la sección:
   
 </div>
+
 ```python
 for layer in STYLE_LAYERS:
   features = net[layer].eval(feed_dict={style_image:style_pre})
@@ -199,11 +200,13 @@ for layer in STYLE_LAYERS:
   gram = np.matmul(features.T, features) / features.size
   style_features[layer] = gram 
 ```
+
 <div style="text-align: justify">
 
 Como se mencionó anteriormente, la forma de tradicional de obtener la correlación entre las capas es mediante una matriz de Gram. Pero esperamos obtener mejores resultados aplicando TDA. Primero necesitamos hacer una matriz dispersa pues las matrices de activacion son considerablemente grandes.
   
 </div>
+
 ```python
 from ripser import ripser
 def makeSparseDM(X, thresh):
@@ -218,6 +221,7 @@ thresh = 1
 D = makeSparseDM(data, thresh)
 filtration = ripser(D, distance_matrix=True)
 ```
+
 <div style="text-align: justify">
   
 En la estructura donde guardamos la filtración, nos centraremos en el diccionario **dgms**, que contiene la información de las muertes y nacimiento de las entidades en distintas dimensiones. De momento no quiero revelar la receta secreta, pero para darse una idea, en la nueva función de estilo tomaremos en cuenta la cantidad de grupos que mueren en un periodo de tiempo, la persistencia de grupo alpha, entre otras cosas. Independientemente de los resultados después podemos agregar informacion sobre los cociclos, para una función más compleja.
