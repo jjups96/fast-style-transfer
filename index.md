@@ -172,7 +172,7 @@ La joya de la corona del TDA es la homología persistente, el método consiste e
 </div>
 <h3>Codigo de barras</h3>
 <div style="text-align: justify">
-Si bien la homología persistente, es matemáticamente compleja y representa información que a los ojos inexpertos parece ser de otra dimensión, literalmente lo es. Su representación como estructura de datos es bastante sencilla. Al calcular una filtración, de manera simplificada, estamos realizando una clusterización en diferentes niveles dimensionales al mismo tiempo donde, más que los grupos que se forman o su tamaño, lo que no interesa conocer es su persistencia, es decir, cuánto “tiempo” existen, cuando nacen, cuando mueren, en relación a la métrica. 
+Si bien la homología persistente, es matemáticamente compleja y representa información que a los ojos inexpertos parece ser de otra dimensión, literalmente lo es. Su representación como estructura de datos es bastante sencilla. Al calcular una filtración, de manera simplificada, estamos realizando una clusterización en diferentes niveles dimensionales al mismo tiempo donde, más que los grupos que se forman o su tamaño, lo que no interesa conocer es su persistencia, es decir, cuánto “tiempo” existen, cuando nacen, cuando mueren, en relación a la métrica. De cierta manera la forma de los datos nos una representacion super comprimida que contiene mucha informacion significativa.
 </div>
 
 <div align='center'>
@@ -181,19 +181,9 @@ Si bien la homología persistente, es matemáticamente compleja y representa inf
 
 <a href="https://www.researchgate.net/figure/Computing-the-persistent-homology-of-a-point-cloud-image-adapted-from-27-Fig-1_fig1_327647193">Fuente</a> 
 
-
-<h3>Interpretación.</h3>
-<div style="text-align: justify">
-Al inicio interpretar los datos puede resultar difícil, aunque intuitivo para un topólogo, nosotros solo necesitamos saber que muchas muertes rápidas, que resultan en un solo individuo, implican datos distribuidos uniformemente en el espacio por lo que no tienen relación, por el contrario grupos que persisten en el tiempo implican agrupaciones, y un super individuo desde el inicio implican mucha correlación.
-</div>
-
-<a href="https://imgur.com/5ouNoWA"><img src="https://i.imgur.com/5ouNoWA.gif" title="source: imgur.com"/></a>
-
-<a href="https://www.researchgate.net/publication/269876798_Topological_Data_Analysis_of_Biological_Aggregation_Models">Fuente</a>
-
 <h3>Modificando la función de estilo.</h3>
 <div style="text-align: justify">
-Es por ello que pensamos utilizar un código de barras para analizar la correlación entre las activaciones de dos redes. Pues el metodo actual es bastante sencillo. De momento el código se modificó para aceptar otra función de estilo, y estamos a la espera de  <a href="https://github.com/scikit-tda/ripser.py/issues/67#issuecomment-475905158">la integración de scikit-tda con conda</a> para realizar pruebas.
+Es por ello que pensamos utilizar un código de barras para analizar la correlación entre las activaciones de las capas de la red. Pues el metodo actual es bastante sencillo. De momento el código se modificó para aceptar otra función de estilo, y estamos a la espera de  <a href="https://github.com/scikit-tda/ripser.py/issues/67#issuecomment-475905158">la integración de scikit-tda con conda</a> para realizar pruebas.
 </div>
 
 <div style="text-align: justify">
@@ -238,3 +228,14 @@ filtration = ripser(D, distance_matrix=True)
   
 En la estructura donde guardamos la filtración, nos centraremos en el diccionario **dgms**, que contiene la información de las muertes y nacimiento de las entidades en distintas dimensiones. De momento no quiero revelar la receta secreta, pero para darse una idea, en la nueva función de estilo tomaremos en cuenta la cantidad de grupos que mueren en un periodo de tiempo, la persistencia de grupo alpha, entre otras cosas. Independientemente de los resultados después podemos agregar informacion sobre los cociclos, para una función más compleja.
 </div>
+
+
+
+<h3>Interpretación.</h3>
+<div style="text-align: justify">
+Al inicio interpretar los datos puede resultar difícil, aunque intuitivo para un topólogo, nosotros solo necesitamos saber que muchas muertes rápidas, que resultan en un solo individuo, implican datos distribuidos uniformemente en el espacio por lo que no tienen relación, por el contrario grupos que persisten en el tiempo implican agrupaciones, y un super individuo desde el inicio implican mucha correlación.
+</div>
+
+<a href="https://imgur.com/5ouNoWA"><img src="https://i.imgur.com/5ouNoWA.gif" title="source: imgur.com"/></a>
+
+<a href="https://www.researchgate.net/publication/269876798_Topological_Data_Analysis_of_Biological_Aggregation_Models">Fuente</a>
