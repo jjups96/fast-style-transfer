@@ -192,17 +192,20 @@ El archivo a modificar es optimize.py en la carpeta src. Específicamente la sec
 </div>
 
 ```python
+
 for layer in STYLE_LAYERS:
   features = net[layer].eval(feed_dict={style_image:style_pre})
   features = np.reshape(features, (-1, features.shape[3]))
   gram = np.matmul(features.T, features) / features.size
   style_features[layer] = gram
+  
 ```
 <div style="text-align: justify">
 Como se mencionó anteriormente, la forma de tradicional de obtener la correlación entre las capas es mediante una matriz de Gram. Pero esperamos obtener mejores resultados aplicando TDA. Primero necesitamos hacer una matriz dispersa pues las matrices de activacion son considerablemente grandes.
 </div>
 
 ```python
+
 from ripser import ripser
 
 def makeSparseDM(X, thresh):
@@ -217,6 +220,7 @@ def makeSparseDM(X, thresh):
 thresh = 1
 D = makeSparseDM(data, thresh)
 filtration = ripser(D, distance_matrix=True)
+
 ```
 <div style="text-align: justify">
   
